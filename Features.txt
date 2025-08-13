@@ -1,0 +1,13 @@
+Emily Wei (ejw235) and Amira Razack (arr258)
+12/11/24
+Description of Features in game 
+
+Sound plays whenever a bullet is released and when the ship collides with an asteroid- uses a Sound object that passed in a wav file to play when the ship collided with an asteroid or when the bullet released.
+
+The background image was created with Photoshop using a specific type of brush and a black background, then drawn as a GImage object with attributes similar to the window size behind the rest of the other images.
+
+Multiple waves were implemented by first creating a class attribute containing the names of the wave JSON files and then putting them into the update function of app.py with specific if statements if the player won the game or not. If the player won, another class attribute called wins would be incremented, which would then associate with index of the next wave level in the waves class attribute list. Then the function would load the next wave after pressing the “n” key, and then the last wave after the second win, and then a final “YOU WIN” with no option to press a button to go to the next wave since it is the last wave.
+
+Similar to the multiple waves feature, if the player loses in the wave, text appears saying they lost and text saying to press the “r” key to retry. Since the player did not win, the wins class attribute was not incremented so the list stays at the current index and reloads the current wave, allowing the player to retry.
+
+Lastly, using GSprite, the animation for when the ship collides with an asteroid was added. It was first initialized in the wave.py initializer and drawn using the final position x and y of the ship which are also class attributes. The final position is assigned before the ship is set to none, and using the an if statement for the frames of the GSprite, it was incremented to 1 less than the count of the frames in the draw function of wave.py since that function runs every frame to create the animation of an explosion.
